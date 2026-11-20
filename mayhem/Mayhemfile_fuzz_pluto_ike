@@ -1,0 +1,11 @@
+project: savantenvs/libreswan
+target: fuzz-pluto-ike
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz-pluto-ike/testsuite
+
+cmds:
+  - cmd: /mayhem/fuzz_pluto_ike
+    libfuzzer: true
+    timeout: 5

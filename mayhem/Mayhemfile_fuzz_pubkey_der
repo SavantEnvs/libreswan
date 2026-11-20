@@ -1,0 +1,11 @@
+project: savantenvs/libreswan
+target: fuzz-pubkey-der
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz-pubkey-der/testsuite
+
+cmds:
+  - cmd: /mayhem/fuzz_pubkey_der
+    libfuzzer: true
+    timeout: 5

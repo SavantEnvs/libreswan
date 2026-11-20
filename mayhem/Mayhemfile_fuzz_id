@@ -1,0 +1,11 @@
+project: savantenvs/libreswan
+target: fuzz-id
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz-id/testsuite
+
+cmds:
+  - cmd: /mayhem/fuzz_id
+    libfuzzer: true
+    timeout: 5
